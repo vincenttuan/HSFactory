@@ -3,32 +3,34 @@ package com.hs.factory.psi.entity;
 import java.util.Date;
 
 public class Materials {
-    private Integer id;
-    private String genericName;
-    private String inciName;
-    private String chemicalStructure_name;
-    private String aliasName;
-    private String vendorNumber;
-    private String vendorName;
-    private String vendorSuggestedratio_min;
-    private String vendorSuggestedratio_min_unit;
-    private Double capacity;
-    private String unit;
-    private String type;
-    private Integer isRegister;
-    private Integer storageLife;
-    private Integer isNonelife;
-    private String spec1;
-    private String spec2;
-    private String spec3;
-    private String spec4;
-    private String spec5;
-    private Date createTime;
-    private Integer employeeId;
-    private Double lastPrice;
-    private Double maxPrice;
-    private Double minPrice;
-    private Double avgPrice;
+    private Integer id; // Materials 序號
+    private String genericName; // 原物料名稱通用版本，例：礦物油
+    private String inciName; // 原物料供應商提供資料, 原物料名稱INCI_NAME，例：mineral oil
+    private String chemicalStructure_name; // 原物料化學結構名稱，例：MOSH-MOAH
+    private String aliasName; // 原物料別名，例：白油
+    private String vendorNumber; // 原物料編號(供應商版本)，例：M105
+    private String vendorName; // 原物料名稱(供應商版本)，例：礦油
+    private String vendorSuggestedratio_min; // 原物料建議用量(供應商版本)，例：5 或 50
+    private String vendorSuggestedratio_min_unit; // 原物料建議用量(供應商版本)，例：% 或 g/公斤
+    private Double capacity; // 原物料進貨最小容積
+    private String unit; // 原物料單位
+    private String type; // 原物料型態
+    // 原始庫存區剩餘量(應該用進貨量 減去 表10.1原物料工廠分裝區對應上架日期-批號對應表 Materials_Factory_Inventory_Area的批號量可以求得)
+    // 原始庫存區警示量(原始庫存區警示量 < 原始庫存區剩餘量 需要出警示報表)
+    private Integer isRegister; // 是否造冊，法定登記)(1：須造冊
+    private Integer storageLife; // 保存期限，壽命：天
+    private Integer isNonelife; // (永久有效)(1：有效)
+    private String spec1; // 其他規格1
+    private String spec2; // 其他規格2 
+    private String spec3; // 其他規格3
+    private String spec4; // 其他規格4
+    private String spec5; // 其他規格5
+    private Date createTime; // 建檔日期
+    private Integer employeeId; // 建檔者
+    private Double lastPrice; // 最後一次交易的價格
+    private Double maxPrice; // 最高價格
+    private Double minPrice; // 最低價格
+    private Double avgPrice; // 平均價格
 
     public Integer getId() {
         return id;
